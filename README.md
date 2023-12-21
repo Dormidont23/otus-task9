@@ -23,4 +23,13 @@ exit 0\
 fi
 
 Добавим права на выполнение:\
-[root@otus-task9 ~]# **chmod +x /opt/watchlog.sh**
+[root@otus-task9 ~]# **chmod +x /opt/watchlog.sh**\
+Юнит для сервиса:\
+[root@otus-task9 ~]# **cat /etc/systemd/system/watchlog.service**\
+[Unit]\
+Description=My watchlog service\
+
+[Service]\
+Type=oneshot\
+EnvironmentFile=/etc/sysconfig/watchlog\
+ExecStart=/opt/watchlog.sh $WORD $LOG\
