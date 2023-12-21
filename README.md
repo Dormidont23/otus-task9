@@ -82,3 +82,49 @@ KillMode=process
 
 [Install]\
 WantedBy=multi-user.target
+
+[root@otus-task9 system]# **systemctl start spawn-fcgi**\
+[root@otus-task9 system]# **systemctl status spawn-fcgi**\
+● spawn-fcgi.service - Spawn-fcgi startup service\
+   Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; disabled; vendor preset: disabled)\
+   Active: active (running) since Thu 2023-12-21 08:54:18 UTC; 5s ago\
+ Main PID: 1862 (php-cgi)\
+    Tasks: 33 (limit: 11068)\
+   Memory: 19.0M\
+   CGroup: /system.slice/spawn-fcgi.service\
+           ├─1862 /usr/bin/php-cgi\
+           ├─1863 /usr/bin/php-cgi\
+           ├─1864 /usr/bin/php-cgi\
+           ├─1865 /usr/bin/php-cgi\
+           ├─1866 /usr/bin/php-cgi\
+           ├─1867 /usr/bin/php-cgi\
+           ├─1868 /usr/bin/php-cgi\
+           ├─1869 /usr/bin/php-cgi\
+           ├─1870 /usr/bin/php-cgi\
+           ├─1871 /usr/bin/php-cgi\
+           ├─1872 /usr/bin/php-cgi\
+           ├─1873 /usr/bin/php-cgi\
+           ├─1874 /usr/bin/php-cgi\
+           ├─1875 /usr/bin/php-cgi\
+           ├─1876 /usr/bin/php-cgi\
+           ├─1877 /usr/bin/php-cgi\
+           ├─1878 /usr/bin/php-cgi\
+           ├─1879 /usr/bin/php-cgi\
+           ├─1880 /usr/bin/php-cgi\
+           ├─1881 /usr/bin/php-cgi\
+           ├─1882 /usr/bin/php-cgi\
+           ├─1883 /usr/bin/php-cgi\
+           ├─1884 /usr/bin/php-cgi\
+           ├─1885 /usr/bin/php-cgi\
+           ├─1886 /usr/bin/php-cgi\
+           ├─1887 /usr/bin/php-cgi\
+           ├─1888 /usr/bin/php-cgi\
+           ├─1889 /usr/bin/php-cgi\
+           ├─1890 /usr/bin/php-cgi\
+           ├─1891 /usr/bin/php-cgi\
+           ├─1892 /usr/bin/php-cgi\
+           ├─1893 /usr/bin/php-cgi\
+           └─1894 /usr/bin/php-cgi
+
+Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.
+
