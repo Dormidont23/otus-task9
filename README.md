@@ -7,4 +7,19 @@
 [root@otus-task9 ~]# **cat /etc/sysconfig/watchlog**\
 WORD="error"\
 LOG=/var/log/watchlog.log\
+Напишем скрипт /opt/watchlog.sh:
+[root@otus-task9 ~]# **cat /opt/watchlog.sh**
+#!/bin/bash
 
+WORD=$1\
+LOG=$2\
+DATE=`date`
+
+if grep $WORD $LOG &> /dev/null\
+then\
+logger "$DATE: слово '$WORD' найдено."\
+else\
+exit 0
+
+Добавим права на выполнение:\
+[root@otus-task9 ~]# **chmod +x /opt/watchlog.sh**
