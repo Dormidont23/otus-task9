@@ -8,7 +8,7 @@
 WORD="error"\
 LOG=/var/log/watchlog.log\
 Напишем скрипт /opt/watchlog.sh:
-[root@otus-task9 ~]# **cat /opt/watchlog.sh**
+[root@otus-task9 ~]# **cat /opt/watchlog.sh**\
 #!/bin/bash
 
 WORD=$1\
