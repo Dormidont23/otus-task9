@@ -85,7 +85,7 @@ WantedBy=multi-user.target
 
 [root@otus-task9 system]# **systemctl start spawn-fcgi**\
 [root@otus-task9 system]# **systemctl status spawn-fcgi**\
-● spawn-fcgi.service - Spawn-fcgi startup service\
+```● spawn-fcgi.service - Spawn-fcgi startup service\
    Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; disabled; vendor preset: disabled)\
    Active: active (running) since Thu 2023-12-21 08:54:18 UTC; 5s ago\
  Main PID: 1862 (php-cgi)\
@@ -126,7 +126,7 @@ WantedBy=multi-user.target
            ├─1893 /usr/bin/php-cgi\
            └─1894 /usr/bin/php-cgi
 
-Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.
+Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.```
 
 [root@otus-task9 conf]# **systemctl start httpd@first**\
 [root@otus-task9 conf]# **systemctl start httpd@second**\
