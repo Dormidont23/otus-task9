@@ -3,8 +3,8 @@
 - Установить spawn-fcgi и переписать init-скрипт на unit-файл (имя service должно называться так же: spawn-fcgi).
 - Дополнить unit-файл httpd возможностью запустить несколько экземпляров сервера с разными конфигурационными файлами.
 
-Создаём файл с конфигурацией /etc/sysconfig/watchlog. Его содеожимое:\
+Создаём файл с конфигурацией /etc/sysconfig/watchlog. Его содержимое:\
 [root@otus-task9 ~]# **cat /etc/sysconfig/watchlog**\
-WORD="ALERT"\
+WORD="error"\
 LOG=/var/log/watchlog.log\
 
