@@ -19,7 +19,8 @@ if grep $WORD $LOG &> /dev/null\
 then\
 logger "$DATE: слово '$WORD' найдено."\
 else\
-exit 0
+exit 0\
+fi
 
 Добавим права на выполнение:\
 [root@otus-task9 ~]# **chmod +x /opt/watchlog.sh**
