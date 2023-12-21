@@ -67,5 +67,18 @@ Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
 \#\
 \# Example :\
 SOCKET=/var/run/php-fcgi.sock\
-OPTIONS="-u apache -g apache -s $SOCKET -S -M 0600 -C 32 -F 1 -P /var/run/spawn-fcgi.pid -- /usr/bin/php-cgi"
+OPTIONS="-u apache -g apache -s $SOCKET -S -M 0600 -C 32 -F 1 -P /var/run/spawn-fcgi.pid -- /usr/bin/php-cgi"\
+[root@otus-task9 system]# **cat /etc/systemd/system/spawn-fcgi.service**\
+[Unit]\
+Description=Spawn-fcgi startup service\
+After=network.target
 
+[Service]\
+Type=simple\
+PIDFile=/var/run/spawn-fcgi.pid\
+EnvironmentFile=/etc/sysconfig/spawn-fcgi\
+ExecStart=/usr/bin/spawn-fcgi -n $OPTIONS\
+KillMode=process
+
+[Install]\
+WantedBy=multi-user.target
