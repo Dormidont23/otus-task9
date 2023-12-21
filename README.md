@@ -128,3 +128,8 @@ WantedBy=multi-user.target
 
 Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.
 
+[root@otus-task9 conf]# **systemctl start httpd@first**\
+[root@otus-task9 conf]# **systemctl start httpd@second**\
+[root@otus-task9 conf]# **ss -tnulp | grep httpd**\
+tcp   LISTEN 0      511          0.0.0.0:8080      0.0.0.0:*    users:(("httpd",pid=2355,fd=3),("httpd",pid=2354,fd=3),("httpd",pid=2353,fd=3),("httpd",pid=2352,fd=3),("httpd",pid=2350,fd=3))\
+tcp   LISTEN 0      511          0.0.0.0:80        0.0.0.0:*    users:(("httpd",pid=2132,fd=3),("httpd",pid=2131,fd=3),("httpd",pid=2130,fd=3),("httpd",pid=2129,fd=3),("httpd",pid=2127,fd=3))\
