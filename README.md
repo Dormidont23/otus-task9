@@ -47,15 +47,14 @@ Unit=watchlog.service\
 WantedBy=multi-user.target\
 Старт таймера:\
 [root@otus-task9 ~]# **systemctl start watchlog.timer**\
-Убедиться, что успешно запустился:\
+Убедиться, что успешно запустился и работает:\
 [root@otus-task9 ~]# **tail -f /var/log/messages**\
-Dec 21 07:50:26 centos8s systemd[1]: Started system activity accounting tool.\
-Dec 21 08:00:26 centos8s systemd[1]: Starting system activity accounting tool...\
-Dec 21 08:00:26 centos8s systemd[1]: Started Update a database for mlocate.\
-Dec 21 08:00:26 centos8s systemd[1]: sysstat-collect.service: Succeeded.\
-Dec 21 08:00:26 centos8s systemd[1]: Started system activity accounting tool.\
-Dec 21 08:00:26 centos8s systemd[1]: mlocate-updatedb.service: Succeeded.\
-Dec 21 08:10:16 centos8s systemd[1]: Starting system activity accounting tool...\
-Dec 21 08:10:16 centos8s systemd[1]: sysstat-collect.service: Succeeded.\
-Dec 21 08:10:16 centos8s systemd[1]: Started system activity accounting tool.\
-Dec 21 08:12:23 centos8s systemd[1]: Started Run watchlog script every 30 second.
+Dec 21 08:36:43 otus-task9 systemd[1004]: Startup finished in 53ms.\
+Dec 21 08:36:43 otus-task9 systemd[1]: Started User Manager for UID 1000.\
+Dec 21 08:36:43 otus-task9 systemd[1]: Started Session 1 of user vagrant.\
+Dec 21 08:36:45 otus-task9 systemd[1]: systemd-hostnamed.service: Succeeded.\
+Dec 21 08:37:13 otus-task9 systemd[1]: Started Run watchlog script every 30 second.\
+Dec 21 08:37:27 otus-task9 chronyd[739]: Selected source 91.209.94.10 (2.centos.pool.ntp.org)\
+Dec 21 08:38:31 otus-task9 systemd[1]: Starting My watchlog service...\
+Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.
+
