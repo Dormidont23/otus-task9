@@ -27,7 +27,7 @@ fi
 Юнит для сервиса:\
 [root@otus-task9 ~]# **cat /etc/systemd/system/watchlog.service**\
 [Unit]\
-Description=My watchlog service\
+Description=My watchlog service
 
 [Service]\
 Type=oneshot\
@@ -37,11 +37,11 @@ ExecStart=/opt/watchlog.sh $WORD $LOG
 Юнит для таймера:\
 [root@otus-task9 ~]# **cat /etc/systemd/system/watchlog.timer**\
 [Unit]\
-Description=Run watchlog script every 30 second\
+Description=Run watchlog script every 30 second
 
 [Timer]\
 OnUnitActiveSec=30\
-Unit=watchlog.service\
+Unit=watchlog.service
 
 [Install]\
 WantedBy=multi-user.target\
