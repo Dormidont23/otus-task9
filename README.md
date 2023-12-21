@@ -35,4 +35,27 @@ EnvironmentFile=/etc/sysconfig/watchlog\
 ExecStart=/opt/watchlog.sh $WORD $LOG
 
 Юнит для таймера:\
-выф
+[root@otus-task9 ~]# **cat /etc/systemd/system/watchlog.timer**\
+[Unit]\
+Description=Run watchlog script every 30 second\
+
+[Timer]\
+OnUnitActiveSec=30\
+Unit=watchlog.service\
+
+[Install]\
+WantedBy=multi-user.target\
+Старт таймера:\
+[root@otus-task9 ~]# **systemctl start watchlog.timer**\
+Убедиться, что успешно запустился:\
+[root@otus-task9 ~]# **tail -f /var/log/messages**\
+Dec 21 07:50:26 centos8s systemd[1]: Started system activity accounting tool.\
+Dec 21 08:00:26 centos8s systemd[1]: Starting system activity accounting tool...\
+Dec 21 08:00:26 centos8s systemd[1]: Started Update a database for mlocate.\
+Dec 21 08:00:26 centos8s systemd[1]: sysstat-collect.service: Succeeded.\
+Dec 21 08:00:26 centos8s systemd[1]: Started system activity accounting tool.\
+Dec 21 08:00:26 centos8s systemd[1]: mlocate-updatedb.service: Succeeded.\
+Dec 21 08:10:16 centos8s systemd[1]: Starting system activity accounting tool...\
+Dec 21 08:10:16 centos8s systemd[1]: sysstat-collect.service: Succeeded.\
+Dec 21 08:10:16 centos8s systemd[1]: Started system activity accounting tool.\
+Dec 21 08:12:23 centos8s systemd[1]: Started Run watchlog script every 30 second.
