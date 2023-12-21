@@ -32,4 +32,7 @@ Description=My watchlog service\
 [Service]\
 Type=oneshot\
 EnvironmentFile=/etc/sysconfig/watchlog\
-ExecStart=/opt/watchlog.sh $WORD $LOG\
+ExecStart=/opt/watchlog.sh $WORD $LOG
+
+Юнит для таймера:\
+выф
