@@ -56,5 +56,6 @@ Dec 21 08:36:45 otus-task9 systemd[1]: systemd-hostnamed.service: Succeeded.\
 Dec 21 08:37:13 otus-task9 systemd[1]: Started Run watchlog script every 30 second.\
 Dec 21 08:37:27 otus-task9 chronyd[739]: Selected source 91.209.94.10 (2.centos.pool.ntp.org)\
 Dec 21 08:38:31 otus-task9 systemd[1]: Starting My watchlog service...\
-Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.
+Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.\
+Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
 
