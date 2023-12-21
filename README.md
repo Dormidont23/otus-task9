@@ -59,3 +59,13 @@ Dec 21 08:38:31 otus-task9 systemd[1]: Starting My watchlog service...\
 Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.\
 Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
 
+[root@otus-task9 ~]# **cat /etc/sysconfig/spawn-fcgi**\
+\# You must set some working options before the "spawn-fcgi" service will work.\
+\# If SOCKET points to a file, then this file is cleaned up by the init script.\
+\#\
+\# See spawn-fcgi(1) for all possible options.\
+\#\
+\# Example :\
+SOCKET=/var/run/php-fcgi.sock\
+OPTIONS="-u apache -g apache -s $SOCKET -S -M 0600 -C 32 -F 1 -P /var/run/spawn-fcgi.pid -- /usr/bin/php-cgi"
+
