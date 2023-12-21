@@ -126,7 +126,8 @@ WantedBy=multi-user.target
            ├─1893 /usr/bin/php-cgi\
            └─1894 /usr/bin/php-cgi
 
-Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.```
+Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.
+```
 
 [root@otus-task9 conf]# **systemctl start httpd@first**\
 [root@otus-task9 conf]# **systemctl start httpd@second**\
