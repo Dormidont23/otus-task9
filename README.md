@@ -62,6 +62,7 @@ Dec 21 08:37:27 otus-task9 chronyd[739]: Selected source 91.209.94.10 (2.centos.
 **Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.**\
 Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
 ### Переписать init-скрипт на unit-файл ###
+Установка spawn-fcgi и необходимых пакетов прописана в Vagrantfile.\
 Раскомментируем строки с переменными в файле /etc/sysconfig/spawn-fcgi.\
 [root@otus-task9 ~]# **cat /etc/sysconfig/spawn-fcgi**\
 \# You must set some working options before the "spawn-fcgi" service will work.\
