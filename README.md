@@ -62,6 +62,7 @@ Dec 21 08:37:27 otus-task9 chronyd[739]: Selected source 91.209.94.10 (2.centos.
 **Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.**\
 Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
 ### Переписать init-скрипт на unit-файл ###
+Раскомментируем строки с переменными в файле /etc/sysconfig/spawn-fcgi.\
 [root@otus-task9 ~]# **cat /etc/sysconfig/spawn-fcgi**\
 \# You must set some working options before the "spawn-fcgi" service will work.\
 \# If SOCKET points to a file, then this file is cleaned up by the init script.\
@@ -70,7 +71,9 @@ Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
 \#\
 \# Example :\
 SOCKET=/var/run/php-fcgi.sock\
-OPTIONS="-u apache -g apache -s $SOCKET -S -M 0600 -C 32 -F 1 -P /var/run/spawn-fcgi.pid -- /usr/bin/php-cgi"\
+OPTIONS="-u apache -g apache -s $SOCKET -S -M 0600 -C 32 -F 1 -P /var/run/spawn-fcgi.pid -- /usr/bin/php-cgi"
+
+Сам юнит файл.\
 [root@otus-task9 system]# **cat /etc/systemd/system/spawn-fcgi.service**\
 [Unit]\
 Description=Spawn-fcgi startup service\
@@ -86,6 +89,7 @@ KillMode=process
 [Install]\
 WantedBy=multi-user.target
 
+Запускаем и смотрим статус.
 [root@otus-task9 system]# **systemctl start spawn-fcgi**\
 [root@otus-task9 system]# **systemctl status spawn-fcgi**\
 ```● spawn-fcgi.service - Spawn-fcgi startup service\
@@ -131,7 +135,22 @@ WantedBy=multi-user.target
 
 Dec 21 08:54:18 otus-task9 systemd[1]: Started Spawn-fcgi startup service.
 ```
+### Настроить запуск нескольких экземпляров сервера с разными конфигурационными файлами ###
+В файлах окружения задается опция для запуска веб-сервера с необходимым конфигурационным файлом:\
+[root@otus-task9 ~]# **cat /etc/sysconfig/httpd-first**\
+OPTIONS=-f conf/first.conf\
+[root@otus-task9 ~]# **cat /etc/sysconfig/httpd-second**\
+OPTIONS=-f conf/second.conf
 
+Правим два конфига в /etc/httpd/conf: **first.conf** и **second.conf**.\
+В **first.conf** добавляем/правим опции:\
+PidFile /var/run/httpd-first.pid\
+Listen 80\
+В **second.conf** добавляем/правим опции:\
+PidFile /var/run/httpd-second.pid\
+Listen 8080
+
+Запускаем и проверяем.\
 [root@otus-task9 conf]# **systemctl start httpd@first**\
 [root@otus-task9 conf]# **systemctl start httpd@second**\
 [root@otus-task9 conf]# **ss -tnulp | grep httpd**\
