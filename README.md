@@ -89,7 +89,7 @@ KillMode=process
 [Install]\
 WantedBy=multi-user.target
 
-Запускаем и смотрим статус.
+Запускаем и смотрим статус.\
 [root@otus-task9 system]# **systemctl start spawn-fcgi**\
 [root@otus-task9 system]# **systemctl status spawn-fcgi**\
 ```● spawn-fcgi.service - Spawn-fcgi startup service\
