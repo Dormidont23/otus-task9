@@ -1,0 +1,2 @@
+WORD="error"
+LOG=/var/log/watchlog.log
