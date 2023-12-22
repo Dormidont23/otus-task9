@@ -3,6 +3,7 @@
 - Установить spawn-fcgi и переписать init-скрипт на unit-файл (имя service должно называться так же: spawn-fcgi).
 - Дополнить unit-файл httpd возможностью запустить несколько экземпляров сервера с разными конфигурационными файлами.
 
+### Написать service, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова ###
 Создаём файл с конфигурацией /etc/sysconfig/watchlog. Его содержимое:\
 [root@otus-task9 ~]# **cat /etc/sysconfig/watchlog**\
 WORD="error"\
@@ -60,7 +61,7 @@ Dec 21 08:37:27 otus-task9 chronyd[739]: Selected source 91.209.94.10 (2.centos.
 **Dec 21 08:38:31 otus-task9 systemd[1]: Starting My watchlog service...**\
 **Dec 21 08:38:31 otus-task9 root[1095]: Thu Dec 21 08:38:31 UTC 2023: слово 'error' найдено.**\
 Dec 21 08:38:31 otus-task9 systemd[1]: watchlog.service: Succeeded.
-
+### Переписать init-скрипт на unit-файл ###
 [root@otus-task9 ~]# **cat /etc/sysconfig/spawn-fcgi**\
 \# You must set some working options before the "spawn-fcgi" service will work.\
 \# If SOCKET points to a file, then this file is cleaned up by the init script.\
