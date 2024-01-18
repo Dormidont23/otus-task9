@@ -6,7 +6,7 @@ DATE=`date`
 
 if grep $WORD $LOG &> /dev/null
 then
-logger "$DATE: слово '$WORD' найдено."
+logger "$DATE: СЃР»РѕРІРѕ '$WORD' РЅР°Р№РґРµРЅРѕ."
 else
 exit 0
 fi
